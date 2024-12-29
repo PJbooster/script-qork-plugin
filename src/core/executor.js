@@ -1,10 +1,12 @@
 import { _$getComponent } from "./utils.js";
+import { log } from "./debug.js";
 
 export function Executor(executorName) {
   this.executorName = executorName;
   this.executorComponent = _$getComponent(executorName);
 
   if (!this.executorComponent) console.error("Cannot find executer component");
+  else log("Found Executor.");
 
   // Use an arrow function to maintain the `this` context
   this.execute = () => {
@@ -19,6 +21,7 @@ export function Executor(executorName) {
 
     this.clear();
     this.executorComponent.initializerData.dataOutputObject = outputs;
+    log(`Execute rules:`, outputs);
 
     // Validate the inputs using a private method (only if inputs are provided)
     if (inputs !== null && validateInputs(inputs)) {
@@ -59,7 +62,7 @@ export function Executor(executorName) {
     return true;
   };
 
-  // Use an arrow function to maintain the `this` context
+  // clears executor input/output
   this.clear = () => {
     this.executorComponent.initializerData.dataOutputObject = [];
     this.executorComponent.initializerData.dataInputObject = [];
