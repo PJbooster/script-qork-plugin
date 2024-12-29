@@ -1,0 +1,24 @@
+{
+  "name": "script-corq",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dwf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack serve --open",
+    "dev": "node ./src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "eslint": "^9.16.0",
+    "eslint-plugin-import": "^2.31.0",
+    "globals": "^15.12.0",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}

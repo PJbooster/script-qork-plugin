@@ -1,0 +1,1879 @@
+{
+    "_id": "67476e798685bae66896636a",
+    "title": "testing-pj",
+    "name": "testing-pj",
+    "type": "ui",
+    "display": "form",
+    "tags": [],
+    "deleted": null,
+    "owner": "piotr.klaczkowski",
+    "components": [
+      {
+        "key": "scriptProcessPolicies",
+        "persistent": false,
+        "type": "hidden",
+        "componentId": "2e92dc10-5b9a-4641-b0da-67779a8535f6",
+        "ancestors": [
+          "root"
+        ],
+        "label": "scriptProcessPolicies",
+        "defaultValue": "console.log('Test Script');",
+        "creator": "piotr.klaczkowski",
+        "created": "2024-11-29T23:35:13.482Z",
+        "modifier": "piotr.klaczkowski",
+        "modified": "2024-11-29T23:40:10.896Z",
+        "permissions": {},
+        "watcherList": [],
+        "validate": {
+          "required": false
+        },
+        "ngprops": {},
+        "disabled": false
+      },
+      {
+        "key": "content",
+        "input": false,
+        "html": "<script async>\nconst SCRIPTCORK_UNQORK_ROOT_CLASS = \".unqorkio-form\";\n\nconst _$getScope = () => {\n  return angular.element(SCRIPTCORK_UNQORK_ROOT_CLASS).scope();\n};\n\nconst _$getForm = () => {\n  let form = _$getScope().form;\n  return form ?? null;\n};\n\nconst _$getComponents = () => {\n  let form = _$getForm();\n  if (form.components) {\n    return form.components;\n  }\n\n  return null;\n};\n\nconst _$getComponent = (componentName) => {\n  let components = _$getComponents();\n  if (!components) return;\n\n  if (Array.isArray(components)) {\n    return components.find((component) => component.key === componentName);\n  }\n\n  return null;\n};\n\n\n\nconst _$getSubmissionData = () => {\n  let data = _$getForm().submission.data;\n  return data ?? null;\n};\n\nconst input = (inputName) => {\n  data = _$getSubmissionData();\n  return data[inputData] ?? null;\n};\n\nconst output = (outputName, data) => {\n  let scope = _$getScope();\n  let outputData = scope.submission.data[outputName];\n\n  if (outputData) {\n    scope.submission.data[outputName] = data;\n    scope.$apply();\n    return;\n  }\n\n  console.error(\"Data with specified outputName not found.\");\n};\n\nconst trigger = (componentName) => {\n  if (!componentName) return;\n  let component = _$getComponent(componentName);\n\n  if (typeof component.execute === \"function\") {\n    component.execute();\n    return;\n  }\n\n  console.error(`Trigger ${componentName} error.`);\n};\n\n\nlet script = _$getComponent(\"scriptProcessPolicies\");\nscript.execute = () => eval(script.defaultValue);\n\n\n</script>",
+        "downloadPDFLabel": "PDF Download",
+        "downloadXLSLabel": "Excel Download",
+        "type": "content",
+        "componentId": "81d056a3-65f2-4c18-8694-2b1274e2be49",
+        "ancestors": [
+          "root"
+        ],
+        "label": "",
+        "creator": "piotr.klaczkowski",
+        "created": "2024-11-28T11:29:30.041Z",
+        "modifier": "piotr.klaczkowski",
+        "modified": "2024-11-28T11:29:30.041Z",
+        "permissions": {},
+        "watcherList": [],
+        "validate": {},
+        "ngprops": {},
+        "disabled": false
+      },
+      {
+        "input": false,
+        "theme": "default",
+        "key": "scriptProcessPolicyData",
+        "tableView": false,
+        "components": [],
+        "outsideDismiss": true,
+        "type": "panel",
+        "componentId": "1bd2047d-dfa2-4d12-a7a2-1b798e7b5a09",
+        "ancestors": [
+          "root"
+        ],
+        "modal": false,
+        "label": "",
+        "creator": "piotr.klaczkowski",
+        "created": "2024-11-29T23:06:49.279Z",
+        "modifier": "piotr.klaczkowski",
+        "modified": "2024-11-29T23:26:22.545Z",
+        "permissions": {},
+        "$embeddedVegaEnabled": true,
+        "watcherList": [],
+        "validate": {},
+        "ngprops": {},
+        "disabled": false
+      },
+      {
+        "input": false,
+        "tableView": false,
+        "key": "initOnLoadPolicyEndorsements",
+        "label": "initOnLoadPolicyEndorsements",
+        "protected": false,
+        "unique": false,
+        "persistent": false,
+        "linked": {
+          "inputs": [],
+          "outputs": [
+            "plugPolicyEndorsements",
+            null
+          ]
+        },
+        "initializerData": {
+          "dataInputObject": [],
+          "dataOutputObject": [
+            {
+              "id": "plugPolicyEndorsements",
+              "type": "trigger",
+              "value": "'GO'",
+              "formula": "'GO'"
+            }
+          ]
+        },
+        "triggerType": "manual",
+        "type": "initializer",
+        "componentId": "307d0551-d06c-4ba1-8483-ada30d76eb57",
+        "ancestors": [
+          "root"
+        ],
+        "creator": "piotr.klaczkowski",
+        "created": "2024-07-10T09:46:22.657Z",
+        "modifier": "piotr.klaczkowski",
+        "modified": "2024-11-29T22:02:22.188Z",
+        "permissions": {},
+        "watcherList": [],
+        "wasDropped": true,
+        "validate": {},
+        "ngprops": {}
+      },
+      {
+        "input": false,
+        "tableView": false,
+        "key": "initScript",
+        "label": "initScript",
+        "protected": false,
+        "unique": false,
+        "persistent": false,
+        "linked": {
+          "inputs": [],
+          "outputs": []
+        },
+        "initializerData": {
+          "dataInputObject": [],
+          "dataOutputObject": []
+        },
+        "triggerType": "manual",
+        "type": "initializer",
+        "componentId": "6e52eabf-8ea9-484a-9e09-9f332834b6e7",
+        "ancestors": [
+          "root"
+        ],
+        "creator": "piotr.klaczkowski",
+        "created": "2024-11-29T23:02:03.993Z",
+        "modifier": "piotr.klaczkowski",
+        "modified": "2024-11-29T23:02:03.993Z",
+        "permissions": {},
+        "watcherList": [],
+        "validate": {},
+        "ngprops": {}
+      },
+      {
+        "multiple": true,
+        "input": true,
+        "tableView": true,
+        "key": "plugPolicyEndorsements",
+        "label": "plugPolicyEndorsements",
+        "protected": false,
+        "unique": false,
+        "persistent": false,
+        "linked": {
+          "inputs": [
+            null
+          ],
+          "outputs": [
+            "policyEndorsements",
+            null
+          ]
+        },
+        "integratorData": {
+          "dataTestObject": [
+            {},
+            {},
+            {},
+            {},
+            {}
+          ],
+          "dataInputObject": [],
+          "dataOutputObject": [
+            {
+              "id": "policyEndorsements",
+              "mapping": "data.resolved.quote.policyEndorsements",
+              "option": "",
+              "header": false
+            }
+          ],
+          "dataFrame": [],
+          "integratorUrl": "/fbu/uapi/modules/6459e55f77b3a7b66e1c3eab/execute"
+        },
+        "triggerType": "manual",
+        "serviceType": "unqork",
+        "requestType": "put",
+        "topLevelArray": false,
+        "arrayKeyPromote": "",
+        "assignEmptyValues": true,
+        "unqorkApi": "/modules/{moduleId}/execute:put",
+        "service": null,
+        "preRequestTransform": null,
+        "prefix": "",
+        "type": "integrator",
+        "componentId": "2e7c3b37-acfc-4b89-ba4f-cd5dda955944",
+        "urlPlaceholders": false,
+        "allowSingleRecordArray": true,
+        "doNotLookForDataKeyInResponse": true,
+        "ancestors": [
+          "root"
+        ],
+        "watcherList": [],
+        "permissions": {},
+        "creator": "piotr.klaczkowski",
+        "created": "2024-07-10T09:46:37.436Z",
+        "modifier": "piotr.klaczkowski",
+        "modified": "2024-07-10T10:08:29.870Z",
+        "postTrigger": "dwfPolicyEndorsements",
+        "validate": {},
+        "ngprops": {}
+      },
+      {
+        "multiple": true,
+        "input": false,
+        "key": "dwfPolicyEndorsements",
+        "label": "dwfPolicyEndorsements",
+        "protected": false,
+        "unique": false,
+        "persistent": false,
+        "showTitle": false,
+        "applyFindReplace": false,
+        "triggerType": "manual",
+        "dataworkflowData": {
+          "dataInputObject": [
+            {
+              "id": "policyEndorsements",
+              "inputLabel": "-1_O1",
+              "key": -1,
+              "inputRequired": "Yes",
+              "source": "Default"
+            },
+            {
+              "id": null,
+              "inputLabel": null,
+              "key": null,
+              "inputRequired": null,
+              "source": null
+            },
+            {
+              "id": null,
+              "inputLabel": null,
+              "key": null,
+              "inputRequired": null,
+              "source": null
+            },
+            {
+              "id": null,
+              "inputLabel": null,
+              "key": null,
+              "inputRequired": null,
+              "source": null
+            },
+            {
+              "id": null,
+              "inputLabel": null,
+              "key": null,
+              "inputRequired": null,
+              "source": null
+            }
+          ],
+          "dataOperationObject": [
+            {
+              "dataOperation": "Console",
+              "key": -3,
+              "label": "TRIGGERED!",
+              "output1": "",
+              "output2": "",
+              "input1": "-1_O1",
+              "input2": "",
+              "argument": ""
+            },
+            {
+              "dataOperation": null,
+              "key": null,
+              "label": null,
+              "output1": null,
+              "output2": null,
+              "input1": null,
+              "input2": null,
+              "argument": null,
+              "option1": null,
+              "option2": null,
+              "option3": null,
+              "option4": null,
+              "option5": null
+            },
+            {
+              "dataOperation": null,
+              "key": null,
+              "label": null,
+              "output1": null,
+              "output2": null,
+              "input1": null,
+              "input2": null,
+              "argument": null,
+              "option1": null,
+              "option2": null,
+              "option3": null,
+              "option4": null,
+              "option5": null
+            },
+            {
+              "dataOperation": null,
+              "key": null,
+              "label": null,
+              "output1": null,
+              "output2": null,
+              "input1": null,
+              "input2": null,
+              "argument": null,
+              "option1": null,
+              "option2": null,
+              "option3": null,
+              "option4": null,
+              "option5": null
+            },
+            {
+              "dataOperation": null,
+              "key": null,
+              "label": null,
+              "output1": null,
+              "output2": null,
+              "input1": null,
+              "input2": null,
+              "argument": null,
+              "option1": null,
+              "option2": null,
+              "option3": null,
+              "option4": null,
+              "option5": null
+            },
+            {
+              "dataOperation": null,
+              "key": null,
+              "label": null,
+              "output1": null,
+              "output2": null,
+              "input1": null,
+              "input2": null,
+              "argument": null,
+              "option1": null,
+              "option2": null,
+              "option3": null,
+              "option4": null,
+              "option5": null
+            },
+            {
+              "dataOperation": null,
+              "key": null,
+              "label": null,
+              "output1": null,
+              "output2": null,
+              "input1": null,
+              "input2": null,
+              "argument": null,
+              "option1": null,
+              "option2": null,
+              "option3": null,
+              "option4": null,
+              "option5": null
+            },
+            {
+              "dataOperation": null,
+              "key": null,
+              "label": null,
+              "output1": null,
+              "output2": null,
+              "input1": null,
+              "input2": null,
+              "argument": null,
+              "option1": null,
+              "option2": null,
+              "option3": null,
+              "option4": null,
+              "option5": null
+            },
+            {
+              "dataOperation": null,
+              "key": null,
+              "label": null,
+              "output1": null,
+              "output2": null,
+              "input1": null,
+              "input2": null,
+              "argument": null,
+              "option1": null,
+              "option2": null,
+              "option3": null,
+              "option4": null,
+              "option5": null
+            },
+            {
+              "dataOperation": null,
+              "key": null,
+              "label": null,
+              "output1": null,
+              "output2": null,
+              "input1": null,
+              "input2": null,
+              "argument": null,
+              "option1": null,
+              "option2": null,
+              "option3": null,
+              "option4": null,
+              "option5": null
+            },
+            {
+              "dataOperation": null,
+              "key": null,
+              "label": null,
+              "output1": null,
+              "output2": null,
+              "input1": null,
+              "input2": null,
+              "argument": null,
+              "option1": null,
+              "option2": null,
+              "option3": null,
+              "option4": null,
+              "option5": null
+            },
+            {
+              "dataOperation": null,
+              "key": null,
+              "label": null,
+              "output1": null,
+              "output2": null,
+              "input1": null,
+              "input2": null,
+              "argument": null,
+              "option1": null,
+              "option2": null,
+              "option3": null,
+              "option4": null,
+              "option5": null
+            }
+          ],
+          "dataOutputObject": [
+            {
+              "id": null,
+              "outputLabel": null,
+              "key": null,
+              "action": null
+            },
+            {
+              "id": null,
+              "outputLabel": null,
+              "key": null,
+              "action": null
+            },
+            {
+              "id": null,
+              "outputLabel": null,
+              "key": null,
+              "action": null
+            },
+            {
+              "id": null,
+              "outputLabel": null,
+              "key": null,
+              "action": null
+            }
+          ],
+          "dataTestObject": [],
+          "goDiagram": {
+            "model": {
+              "nodeDataArray": [
+                {
+                  "type": "Input",
+                  "label": "policyEndorsements",
+                  "component": "policyEndorsements",
+                  "required": "Yes",
+                  "title": "Input",
+                  "category": "Input",
+                  "source": "Default",
+                  "key": -1,
+                  "__gohashid": 26481,
+                  "location": "0 0"
+                },
+                {
+                  "type": "Console",
+                  "label": "TRIGGERED!",
+                  "title": "Console",
+                  "category": "Console",
+                  "key": -3,
+                  "__gohashid": 15272,
+                  "location": "127.75 6.055833292007442"
+                }
+              ],
+              "linkDataArray": [
+                {
+                  "__gohashid": 15723,
+                  "from": -1,
+                  "to": -3,
+                  "frompid": "O1",
+                  "topid": "I1"
+                }
+              ]
+            }
+          },
+          "isDebugMode": false
+        },
+        "manualLayout": false,
+        "type": "dataworkflow",
+        "componentId": "09cb5c24-89ef-4c2a-be34-108c99e7e1e5",
+        "errorTriggerFeatureEnabled": true,
+        "tags": [],
+        "permissions": {},
+        "ancestors": [
+          "root"
+        ],
+        "watcherList": [],
+        "lockKey": true,
+        "creator": "piotr.klaczkowski",
+        "created": "2024-07-10T10:07:58.133Z",
+        "modifier": "piotr.klaczkowski",
+        "modified": "2024-11-29T22:02:42.237Z",
+        "validate": {},
+        "ngprops": {}
+      },
+      {
+        "key": "policyEndorsements",
+        "persistent": true,
+        "type": "hidden",
+        "componentId": "dece9651-867d-4c11-88a4-dbda115f5550",
+        "ancestors": [
+          "root"
+        ],
+        "label": "policyEndorsements ",
+        "creator": "piotr.klaczkowski",
+        "created": "2024-07-10T09:48:16.399Z",
+        "modifier": "piotr.klaczkowski",
+        "modified": "2024-11-29T22:36:47.713Z",
+        "permissions": {},
+        "watcherList": [],
+        "wasDropped": true,
+        "dvParent": "fgUniformGridUniformGrid",
+        "dvParentNested": "fgUniformGridUniformGrid",
+        "parentChanged": true,
+        "defaultValue": "test",
+        "validate": {},
+        "ngprops": {},
+        "disabled": false
+      },
+      {
+        "key": "uniformGrid",
+        "label": "Uniform Grid",
+        "collapsed": false,
+        "editOption": "Full grid editable",
+        "displayPattern": "Inline",
+        "heightOption": "Auto height",
+        "customizeButtonStyling": true,
+        "allowSelectEdditing": false,
+        "buttonThemes": [
+          {
+            "id": "primary",
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "id": "secondary",
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "id": "success",
+            "name": "Success",
+            "value": "success"
+          },
+          {
+            "id": "danger",
+            "name": "Danger",
+            "value": "danger"
+          },
+          {
+            "id": "warning",
+            "name": "Warning",
+            "value": "warning"
+          },
+          {
+            "id": "info",
+            "name": "Info",
+            "value": "info"
+          },
+          {
+            "id": "light",
+            "name": "Light",
+            "value": "light"
+          },
+          {
+            "id": "dark",
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "id": "link",
+            "name": "Link",
+            "value": "link"
+          }
+        ],
+        "createThemeButton": "primary",
+        "saveThemeButton": "primary",
+        "editThemeButton": "primary",
+        "deleteThemeButton": "primary",
+        "height": 400,
+        "type": "inlineGrid",
+        "componentId": "92a84f14-cff4-48fb-a7a5-90b38f7dfee7",
+        "triggers": [],
+        "displayPatterns": [
+          {
+            "name": "Inline",
+            "value": "Inline"
+          },
+          {
+            "name": "Simple loop",
+            "value": "Simple loop"
+          }
+        ],
+        "labelViews": [
+          {
+            "name": "Show as column headers",
+            "value": "labelAsHeader",
+            "tooltip": "Shows component label text as column headers in Express View."
+          },
+          {
+            "name": "Show inline",
+            "value": "labelInline",
+            "tooltip": "Shows component label text inline with the component cell for each row in Express View."
+          },
+          {
+            "name": "Hide label",
+            "value": "labelHidden",
+            "tooltip": "Hides component label text column headers from Express View."
+          }
+        ],
+        "selectedLabelView": "labelAsHeader",
+        "permissions": {},
+        "ancestors": [
+          "root"
+        ],
+        "watcherList": [],
+        "creator": "piotr.klaczkowski",
+        "created": "2024-07-10T10:27:19.142Z",
+        "modifier": "piotr.klaczkowski",
+        "modified": "2024-07-10T11:25:26.549Z",
+        "parentChanged": true,
+        "createNewLabel": "New Endorsement",
+        "hidden": false,
+        "createCustomClass": "hidden",
+        "wasDropped": true,
+        "components": [
+          {
+            "active": true,
+            "persistent": true,
+            "key": "code",
+            "label": "Code",
+            "type": "textfield",
+            "componentId": "9d90b6c9-7d16-4a24-9246-2cbcede57b96",
+            "ancestors": [
+              "root",
+              "uniformGrid"
+            ],
+            "react": true,
+            "useInputMask": false,
+            "creator": "piotr.klaczkowski",
+            "created": "2024-07-10T11:08:05.816Z",
+            "modifier": "piotr.klaczkowski",
+            "modified": "2024-07-10T11:50:34.529Z",
+            "permissions": {},
+            "watcherList": [],
+            "dvParent": "uniformGrid",
+            "dvParentNested": "uniformGrid",
+            "parentChanged": true,
+            "disabled": true,
+            "wasDropped": true
+          },
+          {
+            "active": true,
+            "persistent": true,
+            "key": "description",
+            "label": "Description",
+            "type": "textfield",
+            "componentId": "f30acd37-a21c-4bdd-90dc-4744cf802842",
+            "ancestors": [
+              "root",
+              "uniformGrid"
+            ],
+            "react": true,
+            "useInputMask": false,
+            "creator": "piotr.klaczkowski",
+            "created": "2024-07-10T11:08:18.778Z",
+            "modifier": "piotr.klaczkowski",
+            "modified": "2024-07-10T11:50:39.511Z",
+            "permissions": {},
+            "watcherList": [],
+            "dvParent": "uniformGrid",
+            "dvParentNested": "uniformGrid",
+            "disabled": true
+          },
+          {
+            "active": true,
+            "persistent": true,
+            "key": "document",
+            "label": "Document",
+            "type": "textfield",
+            "componentId": "72cd9efe-b87e-4a2d-ac82-051dea021838",
+            "ancestors": [
+              "root",
+              "uniformGrid"
+            ],
+            "react": true,
+            "useInputMask": false,
+            "creator": "piotr.klaczkowski",
+            "created": "2024-07-10T11:08:28.559Z",
+            "modifier": "piotr.klaczkowski",
+            "modified": "2024-07-10T11:50:42.912Z",
+            "permissions": {},
+            "watcherList": [],
+            "dvParent": "uniformGrid",
+            "dvParentNested": "uniformGrid",
+            "disabled": true
+          }
+        ],
+        "validate": {},
+        "ngprops": {},
+        "rowErrorMsg": "Errors found",
+        "stdGridErrors": {}
+      },
+      {
+        "input": true,
+        "label": "TRIGGER SCRIPT",
+        "tableView": false,
+        "key": "btnNewEndorsement",
+        "size": "md",
+        "leftIcon": "",
+        "rightIcon": "",
+        "block": false,
+        "elementType": "module",
+        "action": "event",
+        "disableOnInvalid": false,
+        "oneClickOnly": false,
+        "theme": "primary",
+        "persistent": false,
+        "errorMessage": "Please check your module and fix fields outlined in red",
+        "errorTitle": "Oops - {{ errors }} error(s) have been found!",
+        "successMessage": "Success!",
+        "successValidateMessage": "Success!",
+        "doNotShowValidatedPopup": true,
+        "confirmationButton": "OK",
+        "cancelButton": "Cancel",
+        "type": "button",
+        "componentId": "4b4e405c-484b-466d-b18f-196886a3c2fd",
+        "ancestors": [
+          "root"
+        ],
+        "clickTrigger": "scriptProcessPolicies",
+        "creator": "piotr.klaczkowski",
+        "created": "2024-07-10T11:27:19.613Z",
+        "modifier": "piotr.klaczkowski",
+        "modified": "2024-11-29T23:40:28.057Z",
+        "permissions": {},
+        "watcherList": [],
+        "parentChanged": true,
+        "event": "",
+        "wasDropped": true,
+        "validate": {},
+        "ngprops": {},
+        "disabled": false
+      },
+      {
+        "key": "fgUniformGrid",
+        "label": "",
+        "type": "field-group",
+        "componentId": "ef843162-301d-48f8-a2b5-59daabd1df09",
+        "ancestors": [
+          "root"
+        ],
+        "title": "fgUniformGrid",
+        "creator": "piotr.klaczkowski",
+        "created": "2024-07-10T09:56:10.198Z",
+        "modifier": "piotr.klaczkowski",
+        "modified": "2024-07-10T09:56:10.198Z",
+        "permissions": {},
+        "watcherList": [],
+        "collapsed": false,
+        "components": [
+          {
+            "input": false,
+            "tableView": false,
+            "key": "ruleOpenModal",
+            "label": "ruleOpenModal",
+            "protected": false,
+            "unique": false,
+            "persistent": false,
+            "debounceSetting": 0,
+            "linked": {
+              "inputs": [
+                "buttonClick",
+                null
+              ],
+              "outputs": [
+                "modalNewEndorsement",
+                null
+              ]
+            },
+            "decisionData": {
+              "dataObject": [
+                {
+                  "buttonClick": "openNewEndoModal",
+                  "modalNewEndorsement_trigger": "openNewEndoModal"
+                },
+                {
+                  "buttonClick": "closeModal",
+                  "modalNewEndorsement_trigger": "closeNewEndoModal"
+                }
+              ],
+              "dataTestObject": [],
+              "dataInputObject": [
+                {
+                  "id": "buttonClick",
+                  "alias": "",
+                  "type": "exact",
+                  "required": false,
+                  "silent": false
+                }
+              ],
+              "dataOutputObject": [
+                {
+                  "id": "modalNewEndorsement",
+                  "type": "trigger"
+                }
+              ],
+              "dataHeader": [
+                "buttonClick",
+                "modalNewEndorsement_trigger"
+              ],
+              "dataFrame": [
+                [
+                  "openNewEndoModal",
+                  "openNewEndoModal"
+                ],
+                [
+                  "closeModal",
+                  "closeNewEndoModal"
+                ]
+              ],
+              "decisionType": "first"
+            },
+            "triggerType": "watch",
+            "type": "decision",
+            "componentId": "5456b6e9-3d12-4d00-9ded-f43c2c272e3c",
+            "permissions": {},
+            "ancestors": [
+              "root",
+              "fgUniformGrid"
+            ],
+            "watcherList": [],
+            "creator": "piotr.klaczkowski",
+            "created": "2024-07-10T11:46:40.238Z",
+            "modifier": "mykola",
+            "modified": "2024-07-11T07:58:59.516Z",
+            "parentChanged": true,
+            "wasDropped": true,
+            "validate": {},
+            "ngprops": {}
+          },
+          {
+            "multiple": true,
+            "input": false,
+            "key": "dwfAppendNewDataRow",
+            "label": "dwfAppendNewDataRow",
+            "protected": false,
+            "unique": false,
+            "persistent": false,
+            "showTitle": false,
+            "applyFindReplace": false,
+            "triggerType": "manual",
+            "dataworkflowData": {
+              "dataInputObject": [
+                {
+                  "id": "_getData",
+                  "inputLabel": "-1_O1",
+                  "key": -1,
+                  "inputRequired": "Yes",
+                  "source": "Default"
+                },
+                {
+                  "id": "policyEndorsements",
+                  "inputLabel": "-6_O1",
+                  "key": -6,
+                  "inputRequired": "Yes",
+                  "source": "Default"
+                },
+                {
+                  "id": null,
+                  "inputLabel": null,
+                  "key": null,
+                  "inputRequired": null,
+                  "source": null
+                },
+                {
+                  "id": null,
+                  "inputLabel": null,
+                  "key": null,
+                  "inputRequired": null,
+                  "source": null
+                },
+                {
+                  "id": null,
+                  "inputLabel": null,
+                  "key": null,
+                  "inputRequired": null,
+                  "source": null
+                },
+                {
+                  "id": null,
+                  "inputLabel": null,
+                  "key": null,
+                  "inputRequired": null,
+                  "source": null
+                }
+              ],
+              "dataOperationObject": [
+                {
+                  "dataOperation": "Get",
+                  "key": -9,
+                  "label": "textNewCode",
+                  "output1": "-9_O1",
+                  "output2": "",
+                  "input1": "-1_O1",
+                  "input2": "",
+                  "argument": "",
+                  "option1": "textNewCode",
+                  "preserveArgumentType": false
+                },
+                {
+                  "dataOperation": "Get",
+                  "key": -3,
+                  "label": "textNewDescription",
+                  "output1": "-3_O1",
+                  "output2": "",
+                  "input1": "-1_O1",
+                  "input2": "",
+                  "argument": "",
+                  "option1": "textNewDescription",
+                  "preserveArgumentType": false
+                },
+                {
+                  "dataOperation": "Get",
+                  "key": -4,
+                  "label": "textNewDocument",
+                  "output1": "-4_O1",
+                  "output2": "",
+                  "input1": "-1_O1",
+                  "input2": "",
+                  "argument": "",
+                  "option1": "textNewDocument",
+                  "preserveArgumentType": false
+                },
+                {
+                  "dataOperation": "Create Table",
+                  "key": -7,
+                  "label": "",
+                  "output1": "-7_O1",
+                  "output2": "",
+                  "input1": "",
+                  "input2": "",
+                  "argument": "",
+                  "option1": "1",
+                  "option2": "No",
+                  "preserveArgumentType": false
+                },
+                {
+                  "dataOperation": "Formula",
+                  "key": -8,
+                  "label": "",
+                  "output1": "-8_O1",
+                  "output2": "",
+                  "input1": "-7_O1",
+                  "input2": "",
+                  "argument": "-9_O1",
+                  "option1": "code=_arg",
+                  "option2": "",
+                  "option3": "",
+                  "option4": "",
+                  "option5": "",
+                  "dontSanitizeFormula": true,
+                  "preserveArgumentType": false
+                },
+                {
+                  "dataOperation": "Formula",
+                  "key": -10,
+                  "label": "",
+                  "output1": "-10_O1",
+                  "output2": "",
+                  "input1": "-8_O1",
+                  "input2": "",
+                  "argument": "-3_O1",
+                  "option1": "description=_arg",
+                  "option2": "",
+                  "option3": "",
+                  "option4": "",
+                  "option5": "",
+                  "dontSanitizeFormula": true,
+                  "preserveArgumentType": false
+                },
+                {
+                  "dataOperation": "Formula",
+                  "key": -11,
+                  "label": "",
+                  "output1": "-11_O1",
+                  "output2": "",
+                  "input1": "-10_O1",
+                  "input2": "",
+                  "argument": "-4_O1",
+                  "option1": "document=_arg",
+                  "option2": "",
+                  "option3": "",
+                  "option4": "",
+                  "option5": "",
+                  "dontSanitizeFormula": true,
+                  "preserveArgumentType": false
+                },
+                {
+                  "dataOperation": "Append",
+                  "key": -2,
+                  "label": "",
+                  "output1": "-2_O1",
+                  "output2": "",
+                  "input1": "-11_O1",
+                  "input2": "-6_O1",
+                  "argument": ""
+                },
+                {
+                  "dataOperation": "Create Value",
+                  "key": -14,
+                  "label": "",
+                  "output1": "-14_O1",
+                  "output2": "",
+                  "input1": "",
+                  "input2": "",
+                  "argument": "-2_O1",
+                  "option1": "='GO'",
+                  "preserveArgumentType": false
+                },
+                {
+                  "dataOperation": null,
+                  "key": null,
+                  "label": null,
+                  "output1": null,
+                  "output2": null,
+                  "input1": null,
+                  "input2": null,
+                  "argument": null,
+                  "option1": null,
+                  "preserveArgumentType": null
+                },
+                {
+                  "dataOperation": null,
+                  "key": null,
+                  "label": null,
+                  "output1": null,
+                  "output2": null,
+                  "input1": null,
+                  "input2": null,
+                  "argument": null,
+                  "option1": null,
+                  "preserveArgumentType": null
+                },
+                {
+                  "dataOperation": null,
+                  "key": null,
+                  "label": null,
+                  "output1": null,
+                  "output2": null,
+                  "input1": null,
+                  "input2": null,
+                  "argument": null,
+                  "option1": null,
+                  "preserveArgumentType": null
+                },
+                {
+                  "dataOperation": null,
+                  "key": null,
+                  "label": null,
+                  "output1": null,
+                  "output2": null,
+                  "input1": null,
+                  "input2": null,
+                  "argument": null,
+                  "option1": null,
+                  "preserveArgumentType": null
+                },
+                {
+                  "dataOperation": null,
+                  "key": null,
+                  "label": null,
+                  "output1": null,
+                  "output2": null,
+                  "input1": null,
+                  "input2": null,
+                  "argument": null,
+                  "option1": null,
+                  "preserveArgumentType": null
+                },
+                {
+                  "dataOperation": null,
+                  "key": null,
+                  "label": null,
+                  "output1": null,
+                  "output2": null,
+                  "input1": null,
+                  "input2": null,
+                  "argument": null,
+                  "option1": null,
+                  "preserveArgumentType": null
+                },
+                {
+                  "dataOperation": null,
+                  "key": null,
+                  "label": null,
+                  "output1": null,
+                  "output2": null,
+                  "input1": null,
+                  "input2": null,
+                  "argument": null,
+                  "option1": null,
+                  "preserveArgumentType": null
+                },
+                {
+                  "dataOperation": null,
+                  "key": null,
+                  "label": null,
+                  "output1": null,
+                  "output2": null,
+                  "input1": null,
+                  "input2": null,
+                  "argument": null,
+                  "option1": null,
+                  "preserveArgumentType": null
+                },
+                {
+                  "dataOperation": null,
+                  "key": null,
+                  "label": null,
+                  "output1": null,
+                  "output2": null,
+                  "input1": null,
+                  "input2": null,
+                  "argument": null,
+                  "option1": null,
+                  "preserveArgumentType": null
+                },
+                {
+                  "dataOperation": null,
+                  "key": null,
+                  "label": null,
+                  "output1": null,
+                  "output2": null,
+                  "input1": null,
+                  "input2": null,
+                  "argument": null,
+                  "option1": null,
+                  "preserveArgumentType": null
+                },
+                {
+                  "dataOperation": null,
+                  "key": null,
+                  "label": null,
+                  "output1": null,
+                  "output2": null,
+                  "input1": null,
+                  "input2": null,
+                  "argument": null,
+                  "option1": null,
+                  "preserveArgumentType": null
+                }
+              ],
+              "dataOutputObject": [
+                {
+                  "id": "policyEndorsements",
+                  "outputLabel": "-2_O1",
+                  "key": -13,
+                  "action": "value"
+                },
+                {
+                  "id": "dwfPolicyEndorsements",
+                  "outputLabel": "-14_O1",
+                  "key": -12,
+                  "action": "value"
+                },
+                {
+                  "id": null,
+                  "outputLabel": null,
+                  "key": null,
+                  "action": null
+                },
+                {
+                  "id": null,
+                  "outputLabel": null,
+                  "key": null,
+                  "action": null
+                },
+                {
+                  "id": null,
+                  "outputLabel": null,
+                  "key": null,
+                  "action": null
+                },
+                {
+                  "id": null,
+                  "outputLabel": null,
+                  "key": null,
+                  "action": null
+                }
+              ],
+              "dataTestObject": [],
+              "goDiagram": {
+                "model": {
+                  "nodeDataArray": [
+                    {
+                      "type": "Input",
+                      "label": "_getData",
+                      "component": "_getData",
+                      "required": "Yes",
+                      "title": "Input",
+                      "category": "Input",
+                      "source": "Default",
+                      "key": -1,
+                      "__gohashid": 89115,
+                      "location": "0 84.31963882446288"
+                    },
+                    {
+                      "type": "Get",
+                      "label": "textNewCode",
+                      "title": "Get",
+                      "category": "Get",
+                      "Path": "textNewCode",
+                      "key": -9,
+                      "__gohashid": 118653,
+                      "location": "117.69233703613281 156.06963882446288",
+                      "preserveArgumentType": false
+                    },
+                    {
+                      "type": "Get",
+                      "label": "textNewDescription",
+                      "title": "Get",
+                      "category": "Get",
+                      "Path": "textNewDescription",
+                      "key": -3,
+                      "__gohashid": 134301,
+                      "location": "239.88467407226562 75",
+                      "preserveArgumentType": false
+                    },
+                    {
+                      "type": "Get",
+                      "label": "textNewDocument",
+                      "title": "Get",
+                      "category": "Get",
+                      "Path": "textNewDocument",
+                      "key": -4,
+                      "__gohashid": 135220,
+                      "location": "370.44419860839844 0",
+                      "preserveArgumentType": false
+                    },
+                    {
+                      "type": "Input",
+                      "label": "policyEndorsements",
+                      "component": "policyEndorsements",
+                      "required": "Yes",
+                      "title": "Input",
+                      "category": "Input",
+                      "source": "Default",
+                      "key": -6,
+                      "__gohashid": 258151,
+                      "location": "500.4259490966797 328.25"
+                    },
+                    {
+                      "type": "Create Table",
+                      "label": "",
+                      "title": "Create Table",
+                      "category": "Create Table",
+                      "Number of rows": "1",
+                      "Create Index": "No",
+                      "key": -7,
+                      "__gohashid": 422237,
+                      "location": "113.5 331.06963882446286",
+                      "preserveArgumentType": false
+                    },
+                    {
+                      "type": "Formula",
+                      "label": "",
+                      "title": "Create Field",
+                      "category": "Formula",
+                      "Field 1": "code=_arg",
+                      "Field 2": "",
+                      "Field 3": "",
+                      "Field 4": "",
+                      "Field 5": "",
+                      "key": -8,
+                      "__gohashid": 422947,
+                      "location": "243.7001724243164 256.06963882446286",
+                      "dontSanitizeFormula": true,
+                      "preserveArgumentType": false
+                    },
+                    {
+                      "type": "Formula",
+                      "label": "",
+                      "title": "Create Field",
+                      "category": "Formula",
+                      "Field 1": "description=_arg",
+                      "Field 2": "",
+                      "Field 3": "",
+                      "Field 4": "",
+                      "Field 5": "",
+                      "key": -10,
+                      "__gohashid": 426660,
+                      "location": "373.97080993652344 181.06963882446288",
+                      "dontSanitizeFormula": true,
+                      "preserveArgumentType": false
+                    },
+                    {
+                      "type": "Formula",
+                      "label": "",
+                      "title": "Create Field",
+                      "category": "Formula",
+                      "Field 1": "document=_arg",
+                      "Field 2": "",
+                      "Field 3": "",
+                      "Field 4": "",
+                      "Field 5": "",
+                      "key": -11,
+                      "__gohashid": 433261,
+                      "location": "502.9375686645508 156.06963882446288",
+                      "dontSanitizeFormula": true,
+                      "preserveArgumentType": false
+                    },
+                    {
+                      "type": "Append",
+                      "label": "",
+                      "title": "Append",
+                      "category": "Append",
+                      "key": -2,
+                      "__gohashid": 604702,
+                      "location": "628.3777160644531 231.06963882446288"
+                    },
+                    {
+                      "type": "Output",
+                      "label": "policyEndorsements",
+                      "component": "policyEndorsements",
+                      "action": "value",
+                      "title": "Output",
+                      "category": "Output",
+                      "key": -13,
+                      "__gohashid": 741066,
+                      "location": "746.3777160644531 328.25"
+                    },
+                    {
+                      "type": "Output",
+                      "label": "dwfPolicyEndorsements",
+                      "component": "dwfPolicyEndorsements",
+                      "action": "value",
+                      "title": "Output",
+                      "category": "Output",
+                      "key": -12,
+                      "__gohashid": 142398,
+                      "location": "874.3294830322266 153.25"
+                    },
+                    {
+                      "type": "Create Value",
+                      "label": "",
+                      "title": "Create Value",
+                      "category": "Create Value",
+                      "Expression/Value": "='GO'",
+                      "key": -14,
+                      "__gohashid": 143423,
+                      "location": "746.5526962280273 156.06963882446288",
+                      "preserveArgumentType": false
+                    }
+                  ],
+                  "linkDataArray": [
+                    {
+                      "__gohashid": 118771,
+                      "from": -1,
+                      "to": -9,
+                      "frompid": "O1",
+                      "topid": "I1"
+                    },
+                    {
+                      "__gohashid": 136733,
+                      "from": -1,
+                      "to": -3,
+                      "frompid": "O1",
+                      "topid": "I1"
+                    },
+                    {
+                      "__gohashid": 137930,
+                      "from": -1,
+                      "to": -4,
+                      "frompid": "O1",
+                      "topid": "I1"
+                    },
+                    {
+                      "__gohashid": 423580,
+                      "from": -9,
+                      "to": -8,
+                      "frompid": "O1",
+                      "topid": "A"
+                    },
+                    {
+                      "__gohashid": 424555,
+                      "from": -7,
+                      "to": -8,
+                      "frompid": "O1",
+                      "topid": "I1"
+                    },
+                    {
+                      "__gohashid": 427860,
+                      "from": -8,
+                      "to": -10,
+                      "frompid": "O1",
+                      "topid": "I1"
+                    },
+                    {
+                      "__gohashid": 429419,
+                      "from": -3,
+                      "to": -10,
+                      "frompid": "O1",
+                      "topid": "A"
+                    },
+                    {
+                      "__gohashid": 435131,
+                      "from": -10,
+                      "to": -11,
+                      "frompid": "O1",
+                      "topid": "I1"
+                    },
+                    {
+                      "__gohashid": 437010,
+                      "from": -4,
+                      "to": -11,
+                      "frompid": "O1",
+                      "topid": "A"
+                    },
+                    {
+                      "__gohashid": 609849,
+                      "from": -11,
+                      "to": -2,
+                      "frompid": "O1",
+                      "topid": "I1"
+                    },
+                    {
+                      "__gohashid": 639569,
+                      "from": -6,
+                      "to": -2,
+                      "frompid": "O1",
+                      "topid": "I2"
+                    },
+                    {
+                      "__gohashid": 742759,
+                      "from": -2,
+                      "to": -13,
+                      "frompid": "O1",
+                      "topid": "I1"
+                    },
+                    {
+                      "__gohashid": 144952,
+                      "from": -2,
+                      "to": -14,
+                      "frompid": "O1",
+                      "topid": "A"
+                    },
+                    {
+                      "__gohashid": 147205,
+                      "from": -14,
+                      "to": -12,
+                      "frompid": "O1",
+                      "topid": "I1"
+                    }
+                  ]
+                }
+              },
+              "isDebugMode": false
+            },
+            "manualLayout": false,
+            "type": "dataworkflow",
+            "componentId": "ca0b80fb-1341-435c-8fcb-4b75d252c1e7",
+            "errorTriggerFeatureEnabled": true,
+            "tags": [],
+            "permissions": {},
+            "ancestors": [
+              "root",
+              "fgUniformGrid"
+            ],
+            "watcherList": [],
+            "creator": "piotr.klaczkowski",
+            "created": "2024-07-10T12:26:34.081Z",
+            "modifier": "mykola",
+            "modified": "2024-07-11T07:59:28.458Z",
+            "parentChanged": true,
+            "wasDropped": true,
+            "validate": {},
+            "ngprops": {}
+          },
+          {
+            "input": false,
+            "theme": "default",
+            "key": "modalNewEndorsement",
+            "tableView": false,
+            "outsideDismiss": true,
+            "type": "panel",
+            "componentId": "93be24c7-d6a9-427d-8505-e769c67d8d3e",
+            "ancestors": [
+              "root",
+              "fgUniformGrid"
+            ],
+            "modal": true,
+            "label": "",
+            "creator": "piotr.klaczkowski",
+            "created": "2024-07-10T10:24:02.494Z",
+            "modifier": "piotr.klaczkowski",
+            "modified": "2024-08-22T10:45:45.571Z",
+            "permissions": {},
+            "vegaEnabled": true,
+            "$activeRuntime": "centauri",
+            "modalOpenEvent": "openNewEndoModal",
+            "watcherList": [],
+            "parentChanged": true,
+            "modalDismissEvent": "closeNewEndoModal",
+            "collapsed": false,
+            "wasDropped": true,
+            "components": [
+              {
+                "active": true,
+                "persistent": true,
+                "key": "textNewCode",
+                "label": "Code",
+                "type": "textfield",
+                "componentId": "f3544111-8ce8-494b-a857-67685fcc6dea",
+                "ancestors": [
+                  "root",
+                  "fgUniformGrid",
+                  "modalNewEndorsement"
+                ],
+                "react": true,
+                "useInputMask": false,
+                "creator": "piotr.klaczkowski",
+                "created": "2024-07-10T12:15:47.796Z",
+                "modifier": "piotr.klaczkowski",
+                "modified": "2024-07-10T13:41:10.681Z",
+                "permissions": {},
+                "watcherList": [],
+                "parentChanged": true,
+                "validate": {
+                  "required": false
+                },
+                "contextModuleId": "67476e798685bae66896636a"
+              },
+              {
+                "active": true,
+                "persistent": true,
+                "key": "textNewDescription",
+                "label": "Description",
+                "type": "textfield",
+                "componentId": "dd598716-43fb-4702-8bc4-d6590e91e18f",
+                "ancestors": [
+                  "root",
+                  "fgUniformGrid",
+                  "modalNewEndorsement"
+                ],
+                "react": true,
+                "useInputMask": false,
+                "creator": "piotr.klaczkowski",
+                "created": "2024-07-10T12:16:18.992Z",
+                "modifier": "piotr.klaczkowski",
+                "modified": "2024-07-10T13:41:17.407Z",
+                "permissions": {},
+                "watcherList": [],
+                "validate": {
+                  "required": false
+                },
+                "contextModuleId": "67476e798685bae66896636a"
+              },
+              {
+                "active": true,
+                "persistent": true,
+                "key": "textNewDocument",
+                "label": "Document",
+                "type": "textfield",
+                "componentId": "02a303fb-24b4-409a-a498-9461ca238942",
+                "ancestors": [
+                  "root",
+                  "fgUniformGrid",
+                  "modalNewEndorsement"
+                ],
+                "react": true,
+                "useInputMask": false,
+                "creator": "piotr.klaczkowski",
+                "created": "2024-07-10T12:16:38.035Z",
+                "modifier": "piotr.klaczkowski",
+                "modified": "2024-07-10T13:41:24.701Z",
+                "permissions": {},
+                "watcherList": [],
+                "validate": {
+                  "required": false
+                },
+                "contextModuleId": "67476e798685bae66896636a"
+              },
+              {
+                "input": true,
+                "label": "Save",
+                "tableView": false,
+                "key": "btnSave",
+                "size": "md",
+                "leftIcon": "",
+                "rightIcon": "",
+                "block": false,
+                "elementType": "module",
+                "action": "event",
+                "disableOnInvalid": false,
+                "oneClickOnly": false,
+                "theme": "primary",
+                "persistent": false,
+                "errorMessage": "Please check your module and fix fields outlined in red",
+                "errorTitle": "Oops - {{ errors }} error(s) have been found!",
+                "successMessage": "Success!",
+                "successValidateMessage": "Success!",
+                "doNotShowValidatedPopup": true,
+                "confirmationButton": "OK",
+                "cancelButton": "Cancel",
+                "type": "button",
+                "componentId": "942df534-d1f9-4518-87e7-64fc311ec007",
+                "ancestors": [
+                  "root",
+                  "fgUniformGrid",
+                  "modalNewEndorsement"
+                ],
+                "creator": "piotr.klaczkowski",
+                "created": "2024-07-10T12:17:33.516Z",
+                "modifier": "mykola",
+                "modified": "2024-07-11T07:59:20.603Z",
+                "permissions": {},
+                "watcherList": [],
+                "postValidationSuccessTrigger": null,
+                "clickTrigger": "dwfAppendNewDataRow",
+                "event": "closeNewEndoModal",
+                "contextModuleId": "67476e798685bae66896636a"
+              }
+            ],
+            "$embeddedVegaEnabled": true,
+            "validate": {},
+            "ngprops": {},
+            "disabled": false
+          }
+        ],
+        "validate": {},
+        "ngprops": {},
+        "disabled": false
+      }
+    ],
+    "settings": {
+      "sourceIde": "Classic",
+      "enableRbac": true,
+      "remoteExecuteOnly": false,
+      "runtimeVersion": "1.0.0",
+      "navPanels": {},
+      "browserStorageNamespaces": []
+    },
+    "archive": "674a511034860cb4680d3132",
+    "fields": {
+      "scriptProcessPolicies": {
+        "type": "hidden",
+        "persistent": false
+      },
+      "content": {
+        "type": "content"
+      },
+      "scriptProcessPolicyData": {
+        "type": "panel"
+      },
+      "initOnLoadPolicyEndorsements": {
+        "type": "initializer",
+        "persistent": false
+      },
+      "initScript": {
+        "type": "initializer",
+        "persistent": false
+      },
+      "plugPolicyEndorsements": {
+        "type": "integrator",
+        "persistent": false
+      },
+      "dwfPolicyEndorsements": {
+        "type": "dataworkflow",
+        "persistent": false
+      },
+      "policyEndorsements": {
+        "type": "hidden",
+        "persistent": true,
+        "dvParent": "fgUniformGridUniformGrid"
+      },
+      "uniformGrid": {
+        "type": "inlineGrid"
+      },
+      "code": {
+        "type": "textfield",
+        "persistent": true,
+        "dvParent": "uniformGrid"
+      },
+      "description": {
+        "type": "textfield",
+        "persistent": true,
+        "dvParent": "uniformGrid"
+      },
+      "document": {
+        "type": "textfield",
+        "persistent": true,
+        "dvParent": "uniformGrid"
+      },
+      "btnNewEndorsement": {
+        "type": "button",
+        "persistent": false
+      },
+      "fgUniformGrid": {
+        "type": "field-group"
+      },
+      "ruleOpenModal": {
+        "type": "decision",
+        "persistent": false
+      },
+      "dwfAppendNewDataRow": {
+        "type": "dataworkflow",
+        "persistent": false
+      },
+      "modalNewEndorsement": {
+        "type": "panel"
+      },
+      "textNewCode": {
+        "type": "textfield",
+        "persistent": true
+      },
+      "textNewDescription": {
+        "type": "textfield",
+        "persistent": true
+      },
+      "textNewDocument": {
+        "type": "textfield",
+        "persistent": true
+      },
+      "btnSave": {
+        "type": "button",
+        "persistent": false
+      }
+    },
+    "componentFields": [
+      {
+        "key": "scriptProcessPolicies",
+        "type": "hidden"
+      },
+      {
+        "key": "content",
+        "type": "content"
+      },
+      {
+        "key": "scriptProcessPolicyData",
+        "type": "panel"
+      },
+      {
+        "key": "initOnLoadPolicyEndorsements",
+        "type": "initializer"
+      },
+      {
+        "key": "initScript",
+        "type": "initializer"
+      },
+      {
+        "key": "plugPolicyEndorsements",
+        "type": "integrator"
+      },
+      {
+        "key": "dwfPolicyEndorsements",
+        "type": "dataworkflow"
+      },
+      {
+        "key": "policyEndorsements",
+        "type": "hidden"
+      },
+      {
+        "key": "uniformGrid",
+        "type": "inlineGrid"
+      },
+      {
+        "key": "code",
+        "type": "textfield"
+      },
+      {
+        "key": "description",
+        "type": "textfield"
+      },
+      {
+        "key": "document",
+        "type": "textfield"
+      },
+      {
+        "key": "btnNewEndorsement",
+        "type": "button"
+      },
+      {
+        "key": "fgUniformGrid",
+        "type": "field-group"
+      },
+      {
+        "key": "ruleOpenModal",
+        "type": "decision"
+      },
+      {
+        "key": "dwfAppendNewDataRow",
+        "type": "dataworkflow"
+      },
+      {
+        "key": "modalNewEndorsement",
+        "type": "panel"
+      },
+      {
+        "key": "textNewCode",
+        "type": "textfield"
+      },
+      {
+        "key": "textNewDescription",
+        "type": "textfield"
+      },
+      {
+        "key": "textNewDocument",
+        "type": "textfield"
+      },
+      {
+        "key": "btnSave",
+        "type": "button"
+      }
+    ],
+    "children": [],
+    "applications": [
+      "67476e798685bae66896636a"
+    ],
+    "workspaces": [
+      "6718fd209db841b1681f499d"
+    ],
+    "lock": {
+      "locked": true,
+      "owner": "piotr.klaczkowski",
+      "forced": false,
+      "created": "2024-11-29T23:41:04.736Z"
+    },
+    "created": "2024-11-27T19:09:45.426Z",
+    "modified": "2024-11-29T23:41:04.760Z",
+    "__v": 18,
+    "fieldMappings": [],
+    "cache": "hit",
+    "elementPermissions": [
+      "v",
+      "c",
+      "u",
+      "d",
+      "p"
+    ],
+    "assumeRole": "Administrator",
+    "assumeRoles": [
+      "Administrator"
+    ],
+    "assumeGroups": [],
+    "isStarred": false
+  }
