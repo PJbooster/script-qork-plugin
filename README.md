@@ -36,6 +36,8 @@ The plugin requires a few configuration steps to set up correctly:
      ```javascript
      <script async>
        <#-- built-code-main-js --#>
+
+       _$setup({ prefix: "_script", executor: "_executor_", mode: "dev" });
      </script>
      ```
    - Create an **Initializer** component with a propertyId matching the name provided in the configuration. The default name is `_executor_`.
@@ -44,6 +46,7 @@ The plugin requires a few configuration steps to set up correctly:
    - In the `src/core/index.js` file, use the `_$setup(config)` method to set up the following options:
      - **prefix**: Defines the prefix that distinguishes scripts from components. Default: `_script`.
      - **executorName**: Specifies the name of the executor component that triggers actions. Default: `_executor_`.
+     - **mode**: Specifies the enviroment: Default: `dev`. (In `prod` mode debug logs are not visible)
 
 ## Usage
 

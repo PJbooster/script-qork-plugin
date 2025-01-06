@@ -1,6 +1,6 @@
 import { log } from "./debug.js";
 import { Executor } from "./executor.js";
-import { _$getComponents } from "./utils.js";
+import { _$getComponent, _$getComponents, _$getSubmission } from "./utils.js";
 
 export let _$executor = null;
 export let _$mode = null;
@@ -66,6 +66,8 @@ export const _$setup = (config) => {
           error
         );
       }
+
+      if (component.key) _$getSubmission().data[component.key] = "None";
     }
   });
 };
